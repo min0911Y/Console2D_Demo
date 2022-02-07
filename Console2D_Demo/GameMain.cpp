@@ -8,6 +8,7 @@ void Console2D::start()
 }
 void Console2D::update()
 {
+	view_map(); //Ë¢ÐÂµØÍ¼
 }
 void Console2D::Thread()
 {
