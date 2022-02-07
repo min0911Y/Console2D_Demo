@@ -1,4 +1,7 @@
 #include "GameMain.h"
+Console2D::C2D_Block RB[800];
+int I = 0;
+int hp = 100;
 void Console2D::start()
 {
 	this->initsprite("X"); //设置主角样貌
@@ -11,6 +14,13 @@ void Console2D::update()
 {
 	view_map(); //刷新地图
 	/*键盘动作的处理*/
+	if (!hp)
+	{
+		system("cls");
+		printf("Game Over");
+		LOG("END");
+		Console2D_Exit::Over();
+	}
 	if (_kbhit()) //检测到键盘动作
 	{
 		this->messageBlock("", ""); //清空信息
@@ -33,7 +43,49 @@ void Console2D::update()
 			this->Move(direction::RIGHT); //向右移动
 		}
 	}
+	if (this->get_worldcount() == 0) {
+		for (int i = 0; i < 5; i++)
+		{
+			if (this->DetermineCmpiBox(Start_Button[i].count))
+			{
+				clearall();
+				break;
+			}
+		}
+	}
+	if (this->get_worldcount() == 1)
+	{
+		for (int i = 0; i < I; i++)
+		{
+			if (DetermineCmpiBox(RB[i].count))
+			{
+				hp--;
+				break;
+			}
+		}
+		this->messageBlock("HP:", to_string(hp));
+	}
 }
 void Console2D::Thread()
 {
+	Other::Srand();
+
+	while (1)
+	{
+		if (this->get_worldcount() == 1)
+		{
+			if (I < 800) {
+				RB[I] = Other::random_Create_Block("#", *this);
+				this->C2D_Create_Block(&RB[I]);
+				this->BlockBodyCollisionDetection(RB[I].count);
+				I++;
+			}
+			else {
+				system("cls && echo YOU R WIN && PAUSE");
+				Console2D_Exit::Over();
+			}
+
+		}
+
+	}
 }
