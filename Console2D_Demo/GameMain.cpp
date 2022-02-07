@@ -9,6 +9,29 @@ void Console2D::start()
 void Console2D::update()
 {
 	view_map(); //刷新地图
+	/*键盘动作的处理*/
+	if (_kbhit()) //检测到键盘动作
+	{
+		this->messageBlock("", ""); //清空信息
+		char ch = _getch(); //获取键盘
+		//移动（WASD）
+		if (ch == 'w' || ch == 'W')
+		{
+			this->Move(direction::UP); //值为0（方向枚举-》上）主角向上方移动
+		}
+		else if (ch == 'a' || ch == 'A')
+		{
+			this->Move(direction::LEFT); //向左移动
+		}
+		else if (ch == 's' || ch == 'S')
+		{
+			this->Move(direction::DOWN); //向下移动
+		}
+		else if (ch == 'd' || ch == 'D')
+		{
+			this->Move(direction::RIGHT); //向右移动
+		}
+	}
 }
 void Console2D::Thread()
 {
