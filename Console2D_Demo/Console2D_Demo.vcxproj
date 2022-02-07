@@ -152,6 +152,7 @@
     <ClCompile Include="CONSOLE2D.cpp" />
     <ClCompile Include="GameMain.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="map.cpp" />
     <ClCompile Include="Other.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
