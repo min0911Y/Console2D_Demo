@@ -1,0 +1,46 @@
+#define ALLHEADER_H
+#ifdef ALLHEADER_H
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+#include <cmath>
+#include <cstring>
+#include <string>
+#include <fstream>
+#include <sstream>
+#include <vector>
+#include <algorithm>
+#include <map>
+#include <set>
+#include <queue>
+#include <stack>
+#include <list>
+#include <deque>
+#include <bitset>
+#include <iterator>
+#include <functional>
+#include <numeric>
+#include <utility>
+#include <complex>
+#include <cassert>
+#include <climits>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <ctime>
+#include <cwchar>
+#include <cwctype>
+#include <cstdarg>
+#include <cstddef>
+#include <windows.h>
+#include <conio.h>
+#include <thread>
+#include <mutex>
+#include <condition_variable>
+#include <atomic>
+#include <future>
+#include <functional>
+#include <mmsystem.h>
+#pragma comment (lib, "winmm.lib")
+using namespace std;
+#endif
