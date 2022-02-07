@@ -5,6 +5,7 @@ void Console2D::start()
 	this->initspritexy(10, 14); //设置主角初始位置
 	this->initWorld(20, 40);//设置世界大小
 	Other::HideCursor(); //隐藏光标
+	Map::Draw::Welcome_ui::MAIN(this); //绘制地图
 }
 void Console2D::update()
 {
